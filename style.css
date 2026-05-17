@@ -391,3 +391,22 @@ footer {
   transform: scale(1.1);
   transition-duration: 0.2s;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #222;
+}
+
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c00;
+  transform: scale(1.1);
+}
