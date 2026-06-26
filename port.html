@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEV8</title>
+    <link rel="stylesheet" href="port.css">
+    <link rel="shortcut icon" href="Img/8.png" type="image/x-icon">
+</head>
+<body>
+
+<header class="out">
+        <a class="logo" href="#">DEV 8</a>
+        <a class="link" href="#soft"><abbr title="Competências técnicas"></abbr>Soft Skills</a>
+        <a class="link" href="#hard"><abbr title="Competências técnicas"></abbr>Hard Skills</a>
+        <a class="link" href="#project">Projetos</a>
+</header>
+
+ <section class="home">
+
+        <img class="img" src="Img/ft.jpeg">
+        <h1>
+            <span>Olá, sou</span>
+            <span style="color:brown">Miguel Quizomba<span>
+        </h1>
+
+        <h3 class="habilites">
+            <span></span>
+        </h3>
+
+        <p class="p1">Sou um Dev Full Stack, Video editor e Empreendedor. Com habilidades em diversas linguagens de programação e ferramentas de edição, estou sempre em busca de aprimorar meus conhecimentos e entregar sempre um resultado excepcional. 
+        </p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+(function() {
+  let lastScroll = 0;
+  const header = document.querySelector('.out') || document.querySelector('header');
+  if (!header) return;
+  window.addEventListener('scroll', function () {
+    const current = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (current > lastScroll && current > 50) {
+   
+      header.classList.add('hidden');
+    } else if (current < lastScroll) {
+  
+      header.classList.remove('hidden');
+    }
+
+    lastScroll = current <= 0 ? 0 : current;
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
