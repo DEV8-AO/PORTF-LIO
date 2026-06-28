@@ -22,8 +22,8 @@ body {
 }
 
 header {
-  width: 262vw;
-  padding: 4vh;
+  background-color: red;
+  
   display: flex;
   justify-content: center;
   animation: cair 0.8s ease-out;
@@ -64,7 +64,7 @@ header {
 }
 
 .link {
-  font-size: 3rem;
+
   color: white;
   margin-left: 2.5rem;
   font-weight: 700;
@@ -72,13 +72,13 @@ header {
 }
 
 .logo {
-  font-size: 4rem;
+  
   color: brown;
   font-weight: 800;
   transition: all 0.3s ease;
   text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
   position: relative;
-  top: -4px;
+  top: -px;
 }
 
 @keyframes cair {
@@ -111,7 +111,7 @@ header {
 }
 
 .home h1 {
-  font-size: 5rem;
+
   position: relative;
   top: -33vh;
   display: flex;
@@ -130,7 +130,7 @@ header {
   left: 2vh;
   display: flex;
   margin: auto;
-  font-size: 5rem;
+ 
   width: 20vh;
 }
 
