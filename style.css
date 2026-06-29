@@ -8,10 +8,9 @@
   scroll-behavior: smooth;
 }
 
-body,
-html {
-  width: 100vw;
-  height: 100vh;
+body, html {
+  width: 100%;
+  min-height: 100vh; /* era height: 100vh — prendia o scroll */
 }
 
 body {
@@ -28,43 +27,11 @@ header {
   animation: cair 0.8s ease-out;
   border-radius: 0px 0px 20px 20px;
   box-shadow: 0px 0px 12px 3px rgba(165, 42, 42, 0.084);
-  width: 330px;
-}
-
-.link:hover {
-  transition-duration: 0.5s;
-  transform: scale(1.20);
-}
-
-.link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 3px;
-  background: brown;
-  bottom: 0;
-  left: 0;
-  transition: width 0.2s ease;
-  transition-duration: 0.5s;
-}
-
-.logo:hover {
-  transform: scale(1.2);
-  text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-}
-
-.link:hover,
-.link.active {
-  color: brown;
-}
-
-.link:hover::after,
-.link.active::after {
-  width: 100%;
+  width: 100%; /* era 330px fixo */
 }
 
 .link {
-  font-size: 16px;
+  font-size: clamp(0.75rem, 2.5vw, 1rem); /* era 16px fixo */
   color: white;
   margin-left: 0.5rem;
   font-weight: 700;
@@ -72,7 +39,7 @@ header {
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 4vw, 1.5rem); /* era 1.5rem fixo */
   color: brown;
   font-weight: 800;
   transition: all 0.3s ease;
@@ -82,168 +49,76 @@ header {
   left: -0.1rem;
 }
 
-@keyframes cair {
-  0% {
-    transform: translateY(-150px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.out.hidden {
-  transform: translateY(-120%);
-  opacity: 0;
-  pointer-events: none;
-}
-
 .home img {
   width: 80vw;
-  display: flex;
-  margin: auto;
-  position: relative;
-  top: 19vh;
-  left: 1vh;
+  max-width: 400px; /* limita em telas grandes */
+  display: block;
+  margin: 2rem auto; /* era top: 19vh — problemático */
   border-radius: 48%;
-
 }
 
 .home .span {
-  font-size: 2rem;
-  position: relative;
-  top: -45vh;
-  display: flex;
-  left: 10px;
+  font-size: clamp(1.2rem, 5vw, 2rem); /* era 2rem fixo */
+  display: block;
+  padding-left: 10px;
   color: white;
-  width: 200px;
+  width: 100%;
+  /* removido top: -45vh */
 }
 
 .home .span2 {
-  font-size: 2rem;
-  position: relative;
-  top: -45vh;
-  display: flex;
-  left: 8vh;
-  width: 240px;
+  font-size: clamp(1.2rem, 5vw, 2rem); /* era 2rem fixo */
+  display: block;
+  padding-left: 4vw;
+  width: 100%;
+  /* removido top: -45vh */
 }
 
 .habilites {
-  font-size: 1.6rem;
-  position: relative;
-  top: -43vh;
-  left: 4vh;
-  display: flex;
-  width: 25vh;
-}
-
-.habilites span::before {
-  content: "Full Stack";
-  color: brown;
-  animation: words 6s infinite;
-}
-
-.habilites span::after {
-  content: "";
-  position: absolute;
-  width: calc(100% + 8px);
-  height: 100%;
-  border-left: 3px solid brown;
-  right: -8px;
-  animation: digitar 1.4s infinite;
+  font-size: clamp(1rem, 4vw, 1.6rem); /* era 1.6rem fixo */
+  display: block;
+  padding-left: 4vw;
+  width: 100%;
+  /* removido top: -43vh */
 }
 
 .home p {
-  font-size: 2vh;
+  font-size: clamp(0.85rem, 2.5vw, 1rem); /* era 2vh */
   line-height: 1.8em;
   font-family: Arial, Helvetica, sans-serif;
   text-align: justify;
   color: white;
   width: 88vw;
-  margin: auto;
-  position: relative;
-  top: 7vh;
+  margin: 2rem auto; /* era top: 7vh */
 }
-
-
-@keyframes words {
-
-  0%,
-  20% {
-    content: "Full Stack";
-  }
-
-  20%,
-  40% {
-    content: "Video Editor";
-  }
-
-  40%,
-  80% {
-    content: "Empreendedor";
-  }
-
-}
-
-@keyframes digitar {
-  to {
-    border-left: 5px;
-  }
-}
-
 
 .soft {
   background: url(Img/fundo.jpg);
   box-shadow: 0px 0px 12px 3px rgba(165, 42, 42, 0.159);
-  position: relative;
-  top: 13.2vh;
+  padding-top: 2rem; /* era top: 13.2vh */
 }
 
 .title {
   color: white;
   display: flex;
   justify-content: center;
-  position: relative;
-  font-size: 4rem;
-  position: relative;
-  top: 2vh;
-}
-
-.title span::before,
-.title span::after {
-  content: '';
-  position: absolute;
-  height: 3px;
-  width: 25%;
-  left: 37.5%;
-  bottom: 0;
-  background: brown;
-  border-radius: 10px;
-}
-
-.title span::after {
-  bottom: -1rem;
-  width: 20%;
-  left: 50%;
-  transform: translateX(-50%);
+  font-size: clamp(2rem, 8vw, 4rem); /* era 4rem fixo */
+  padding-top: 2vh;
 }
 
 .soft p {
-  font-size: 2.2rem;
+  font-size: clamp(0.9rem, 3vw, 1.2rem); /* era 2.2rem — enorme */
   line-height: 1.8em;
   width: 80vw;
   font-family: Arial, Helvetica, sans-serif;
   text-align: justify;
   color: white;
   margin: auto;
-  position: relative;
-  top: 4vh;
+  padding-top: 4vh;
 }
 
-.soft>.conteiner p {
-  font-size: 1.5vh;
+.soft > .conteiner p {
+  font-size: clamp(0.75rem, 2vw, 0.9rem); /* era 1.5vh */
   color: white;
   text-align: center;
   background-color: rgba(165, 42, 42, 0.034);
@@ -256,14 +131,14 @@ header {
 
 .box {
   position: relative;
-  left: 3vh;
+  left: 3vw; /* era 3vh — vh em left é errado */
   top: 5vh;
   width: 40vw;
 }
 
 .box2 {
   position: relative;
-  left: 24vh;
+  left: 24vw; /* era 24vh — vh em left é errado */
   top: -23.6vh;
   width: 40vw;
 }
