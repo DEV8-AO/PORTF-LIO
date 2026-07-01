@@ -43,7 +43,7 @@ header {
 }
 
 .link {
-  font-size: clamp(1.2rem, 4vw, 1.4rem);
+  font-size: clamp(1.1rem, 4vw, 1.1rem);
   color: white;
   margin-left: 0.9rem;
   font-weight: 700;
@@ -67,7 +67,7 @@ header {
   display: block;
   margin:auto;
   position: relative;
-  top:18vh;
+  top:20vh;
   border-radius: 48%;
 }
 
